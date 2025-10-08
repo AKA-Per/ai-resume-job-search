@@ -9,7 +9,7 @@ class UserCreate(BaseModel):
     is_company: bool = False
 
 class UserLogin(BaseModel):
-    email: EmailStr
+    username: EmailStr
     password: str
 
 class Token(BaseModel):
