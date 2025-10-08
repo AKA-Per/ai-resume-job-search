@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy.orm import relationship
 from app.models.database import Base
 
 class User(Base):
@@ -8,3 +9,5 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     full_name = Column(String)
     is_company = Column(Boolean, default=False)  # False = candidate, True = HR/company
+    
+    profile = relationship("Profile", uselist=False, back_populates="user")
